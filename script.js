@@ -1,6 +1,9 @@
 // Script minimal — tu pourras ajouter des fonctions plus tard
 console.log("DVM Motorsport : script chargé !");
-// Base de données véhicules + années + prix -20%
+// DVM Motorsport : script chargé !
+console.log("DVM Motorsport : script chargé !");
+
+// Base de données véhicules + années + prix environ -20%
 const vehicles = [
   {
     brand: "Volkswagen",
@@ -89,8 +92,7 @@ const resultTuned = document.getElementById("result-tuned");
 const resultGain = document.getElementById("result-gain");
 const resultPrice = document.getElementById("result-price");
 
-
-// --- 1. REMPLIR LES MARQUES ---
+// --- 1. Remplir la liste des marques ---
 const brands = [...new Set(vehicles.map(v => v.brand))].sort();
 
 brands.forEach(brand => {
@@ -100,8 +102,7 @@ brands.forEach(brand => {
   brandSelect.appendChild(option);
 });
 
-
-// --- 2. CHOIX DE LA MARQUE ---
+// --- 2. Quand une marque est choisie ---
 brandSelect.addEventListener("change", () => {
   const brand = brandSelect.value;
 
@@ -118,13 +119,11 @@ brandSelect.addEventListener("change", () => {
 
   const models = vehicles.filter(v => v.brand === brand);
 
-  // Ajouter option par défaut
   const defaultModel = document.createElement("option");
   defaultModel.value = "";
   defaultModel.textContent = "Sélectionner un modèle";
   modelSelect.appendChild(defaultModel);
 
-  // Remplir modèles
   models.forEach(v => {
     const opt = document.createElement("option");
     opt.value = v.model;
@@ -135,26 +134,21 @@ brandSelect.addEventListener("change", () => {
   modelSelect.disabled = false;
 });
 
-
-// --- 3. CHOIX DU MODÈLE ---
+// --- 3. Quand un modèle est choisi ---
 modelSelect.addEventListener("change", () => {
   const model = modelSelect.value;
 
-  // Reset
   yearSelect.innerHTML = "";
   resultBox.classList.add("hidden");
 
   const vehicle = vehicles.find(v => v.model === model);
-
   if (!vehicle) return;
 
-  // Ajouter option par défaut
   const defaultYear = document.createElement("option");
   defaultYear.value = "";
   defaultYear.textContent = "Sélectionner l'année";
   yearSelect.appendChild(defaultYear);
 
-  // Remplir années
   vehicle.years.forEach(a => {
     const opt = document.createElement("option");
     opt.value = a;
@@ -165,12 +159,10 @@ modelSelect.addEventListener("change", () => {
   yearSelect.disabled = false;
 });
 
-
-// --- 4. CHOIX DE L’ANNÉE (AFFICHAGE DES GAINS) ---
+// --- 4. Quand une année est choisie (on affiche les gains) ---
 yearSelect.addEventListener("change", () => {
   const model = modelSelect.value;
   const vehicle = vehicles.find(v => v.model === model);
-
   if (!vehicle) return;
 
   resultTitle.textContent = `${vehicle.brand} – ${vehicle.model} (${yearSelect.value})`;
