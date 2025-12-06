@@ -1,0 +1,78 @@
+/* Style général */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+/* Conteneur */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Header */
+.site-header {
+  background: #000;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #e30613;
+  text-decoration: none;
+}
+
+/* Hero section */
+.hero {
+  background: linear-gradient(to bottom, #1a1a1a, #000);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #ccc;
+}
+
+/* Sections */
+.section {
+  padding: 40px 0;
+}
+
+.section h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #e30613;
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.section li {
+  background: #222;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 15px 0;
+  background: #000;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #777;
+}
