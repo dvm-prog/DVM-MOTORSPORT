@@ -374,10 +374,9 @@ const vehicles = [
 ];
 
 // ----------------------
-// SCRIPT FONCTIONNEL
+// LOGIQUE JS
 // ----------------------
 window.addEventListener("DOMContentLoaded", () => {
-
   const brandSelect = document.getElementById("brand-select");
   const modelSelect = document.getElementById("model-select");
   const yearSelect = document.getElementById("year-select");
@@ -387,4 +386,90 @@ window.addEventListener("DOMContentLoaded", () => {
   const resultStock = document.getElementById("result-stock");
   const resultTuned = document.getElementById("result-tuned");
   const resultGain = document.getElementById("result-gain");
-  const resultPrice = document.getElementById("result-pr
+  const resultPrice = document.getElementById("result-price");
+
+  if (!brandSelect || !modelSelect || !yearSelect) {
+    console.warn("Section gains non trouvée dans le HTML.");
+    return;
+  }
+
+  // 1. Remplir marques
+  const brands = [...new Set(vehicles.map(v => v.brand))].sort();
+  brands.forEach(b => {
+    const opt = document.createElement("option");
+    opt.value = b;
+    opt.textContent = b;
+    brandSelect.appendChild(opt);
+  });
+
+  // 2. Quand marque choisie
+  brandSelect.addEventListener("change", () => {
+    const brand = brandSelect.value;
+
+    modelSelect.innerHTML = "";
+    yearSelect.innerHTML = "";
+    resultBox.classList.add("hidden");
+
+    if (!brand) {
+      modelSelect.disabled = true;
+      yearSelect.disabled = true;
+      return;
+    }
+
+    const models = vehicles.filter(v => v.brand === brand);
+
+    const def = document.createElement("option");
+    def.value = "";
+    def.textContent = "Sélectionner un modèle";
+    modelSelect.appendChild(def);
+
+    models.forEach(m => {
+      const opt = document.createElement("option");
+      opt.value = m.model;
+      opt.textContent = m.model;
+      modelSelect.appendChild(opt);
+    });
+
+    modelSelect.disabled = false;
+  });
+
+  // 3. Quand modèle choisi
+  modelSelect.addEventListener("change", () => {
+    const model = modelSelect.value;
+
+    yearSelect.innerHTML = "";
+    resultBox.classList.add("hidden");
+
+    const vehicle = vehicles.find(v => v.model === model);
+    if (!vehicle) return;
+
+    const def = document.createElement("option");
+    def.value = "";
+    def.textContent = "Sélectionner l'année";
+    yearSelect.appendChild(def);
+
+    vehicle.years.forEach(y => {
+      const opt = document.createElement("option");
+      opt.value = y;
+      opt.textContent = y;
+      yearSelect.appendChild(opt);
+    });
+
+    yearSelect.disabled = false;
+  });
+
+  // 4. Quand année choisie
+  yearSelect.addEventListener("change", () => {
+    const model = modelSelect.value;
+    const vehicle = vehicles.find(v => v.model === model);
+    if (!vehicle) return;
+
+    resultTitle.textContent = `${vehicle.brand} – ${vehicle.model} (${yearSelect.value})`;
+    resultStock.textContent = vehicle.stock;
+    resultTuned.textContent = vehicle.tuned;
+    resultGain.textContent = vehicle.gain;
+    resultPrice.textContent = vehicle.price;
+
+    resultBox.classList.remove("hidden");
+  });
+});
