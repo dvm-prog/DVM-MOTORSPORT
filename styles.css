@@ -155,3 +155,10 @@ img {
   max-width: 250px;
   height: auto;
 }
+/* Logo DVM */
+.logo-img {
+  display: block;
+  margin: 0 auto 10px;  /* centre le logo */
+  max-width: 260px;     /* taille max du logo */
+  height: auto;
+}
