@@ -89,6 +89,10 @@ body {
     .logo-img {
         width: 80%;
         max-width: 320px;
+        filter: drop-shadow(0 0 12px #39ff14);
+    }
+
+    .hero {
+        padding-top: 30px;
     }
 }
-
