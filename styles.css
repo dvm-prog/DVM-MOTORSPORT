@@ -149,3 +149,9 @@ body {
 .contact-btn.wa:hover {
     background: #1ebe5b;
 }
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 250px;
+  height: auto;
+}
