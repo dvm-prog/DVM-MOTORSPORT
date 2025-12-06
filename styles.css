@@ -179,3 +179,64 @@ img {
   color: #ffffff;
   text-decoration: underline;
 }
+/* Section Gains */
+/* Texte sous le titre */
+.section-note {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+/* Barre de recherche */
+.gains-search {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background: #111;
+  color: #fff;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Conteneur du tableau (scroll sur mobile) */
+.gains-table-wrapper {
+  overflow-x: auto;
+}
+
+/* Tableau */
+.gains-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #181818;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+/* Cellules */
+.gains-table th,
+.gains-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #333;
+  text-align: left;
+}
+
+/* En-tête */
+.gains-table th {
+  background: #202020;
+  color: #ff4d00;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Une ligne sur deux */
+.gains-table tr:nth-child(even) {
+  background: #151515;
+}
+
+/* Survol */
+.gains-table tr:hover {
+  background: #262626;
+}
