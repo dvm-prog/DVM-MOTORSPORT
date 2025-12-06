@@ -227,7 +227,7 @@ const vehicles = [
     price: "340 €"
   },
 
-    // PEUGEOT / CITROËN
+  // PEUGEOT / CITROËN
   {
     brand: "Peugeot",
     model: "308 1.5 BlueHDi 130",
@@ -372,3 +372,19 @@ const vehicles = [
     price: "340 €"
   }
 ];
+
+// ----------------------
+// SCRIPT FONCTIONNEL
+// ----------------------
+window.addEventListener("DOMContentLoaded", () => {
+
+  const brandSelect = document.getElementById("brand-select");
+  const modelSelect = document.getElementById("model-select");
+  const yearSelect = document.getElementById("year-select");
+
+  const resultBox = document.getElementById("gain-result");
+  const resultTitle = document.getElementById("result-title");
+  const resultStock = document.getElementById("result-stock");
+  const resultTuned = document.getElementById("result-tuned");
+  const resultGain = document.getElementById("result-gain");
+  const resultPrice = document.getElementById("result-pr
