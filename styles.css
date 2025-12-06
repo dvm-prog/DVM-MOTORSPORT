@@ -96,3 +96,51 @@ body {
         padding-top: 30px;
     }
 }
+/* Boutons contact flottants */
+.floating-contact {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.contact-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #39ff14;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 0 14px rgba(57, 255, 20, 0.7);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.contact-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 1);
+}
+
+.contact-btn.call {
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.contact-btn.call:hover {
+    background: #e0e0e0;
+}
+
+.contact-btn.wa {
+    background: #25d366;
+    box-shadow: 0 0 14px rgba(37, 211, 102, 0.8);
+}
+
+.contact-btn.wa:hover {
+    background: #1ebe5b;
+}
