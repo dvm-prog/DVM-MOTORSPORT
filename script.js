@@ -76,31 +76,36 @@ const vehicles = [
   }
 ];
 
-// Sélecteurs
+// Sélecteurs HTML
 const brandSelect = document.getElementById("brand-select");
 const modelSelect = document.getElementById("model-select");
 const yearSelect = document.getElementById("year-select");
 const resultBox = document.getElementById("gain-result");
 
-// Champs résultat
+// Champs texte
 const resultTitle = document.getElementById("result-title");
 const resultStock = document.getElementById("result-stock");
 const resultTuned = document.getElementById("result-tuned");
 const resultGain = document.getElementById("result-gain");
 const resultPrice = document.getElementById("result-price");
 
-// Remplir marques
+
+// --- 1. REMPLIR LES MARQUES ---
 const brands = [...new Set(vehicles.map(v => v.brand))].sort();
-brands.forEach(b => {
-  const opt = document.createElement("option");
-  opt.value = b;
-  opt.textContent = b;
-  brandSelect.appendChild(opt);
+
+brands.forEach(brand => {
+  const option = document.createElement("option");
+  option.value = brand;
+  option.textContent = brand;
+  brandSelect.appendChild(option);
 });
 
-// Quand une marque est choisie
+
+// --- 2. CHOIX DE LA MARQUE ---
 brandSelect.addEventListener("change", () => {
   const brand = brandSelect.value;
+
+  // Reset
   modelSelect.innerHTML = "";
   yearSelect.innerHTML = "";
   resultBox.classList.add("hidden");
@@ -113,11 +118,13 @@ brandSelect.addEventListener("change", () => {
 
   const models = vehicles.filter(v => v.brand === brand);
 
-  const defaultOpt = document.createElement("option");
-  defaultOpt.value = "";
-  defaultOpt.textContent = "Sélectionner un modèle";
-  modelSelect.appendChild(defaultOpt);
+  // Ajouter option par défaut
+  const defaultModel = document.createElement("option");
+  defaultModel.value = "";
+  defaultModel.textContent = "Sélectionner un modèle";
+  modelSelect.appendChild(defaultModel);
 
+  // Remplir modèles
   models.forEach(v => {
     const opt = document.createElement("option");
     opt.value = v.model;
@@ -128,9 +135,12 @@ brandSelect.addEventListener("change", () => {
   modelSelect.disabled = false;
 });
 
-// Quand un modèle est choisi
+
+// --- 3. CHOIX DU MODÈLE ---
 modelSelect.addEventListener("change", () => {
   const model = modelSelect.value;
+
+  // Reset
   yearSelect.innerHTML = "";
   resultBox.classList.add("hidden");
 
@@ -138,22 +148,25 @@ modelSelect.addEventListener("change", () => {
 
   if (!vehicle) return;
 
-  const defaultYearOpt = document.createElement("option");
-  defaultYearOpt.value = "";
-  defaultYearOpt.textContent = "Sélectionner l'année";
-  yearSelect.appendChild(defaultYearOpt);
+  // Ajouter option par défaut
+  const defaultYear = document.createElement("option");
+  defaultYear.value = "";
+  defaultYear.textContent = "Sélectionner l'année";
+  yearSelect.appendChild(defaultYear);
 
-  vehicle.years.forEach(y => {
+  // Remplir années
+  vehicle.years.forEach(a => {
     const opt = document.createElement("option");
-    opt.value = y;
-    opt.textContent = y;
+    opt.value = a;
+    opt.textContent = a;
     yearSelect.appendChild(opt);
   });
 
   yearSelect.disabled = false;
 });
 
-// Quand une année est choisie
+
+// --- 4. CHOIX DE L’ANNÉE (AFFICHAGE DES GAINS) ---
 yearSelect.addEventListener("change", () => {
   const model = modelSelect.value;
   const vehicle = vehicles.find(v => v.model === model);
@@ -168,4 +181,3 @@ yearSelect.addEventListener("change", () => {
 
   resultBox.classList.remove("hidden");
 });
-
