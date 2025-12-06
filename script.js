@@ -1,6 +1,4 @@
-// Script minimal — tu pourras ajouter des fonctions plus tard
-console.log("DVM Motorsport : script chargé !");
-// DVM Motorsport : script chargé !
+// DVM Motorsport : script chargé (debug)
 console.log("DVM Motorsport : script chargé !");
 
 // Base de données véhicules + années + prix environ -20%
@@ -79,97 +77,106 @@ const vehicles = [
   }
 ];
 
-// Sélecteurs HTML
-const brandSelect = document.getElementById("brand-select");
-const modelSelect = document.getElementById("model-select");
-const yearSelect = document.getElementById("year-select");
-const resultBox = document.getElementById("gain-result");
+// On attend que le HTML soit chargé avant d'accéder aux éléments
+window.addEventListener("DOMContentLoaded", () => {
+  // Sélecteurs HTML
+  const brandSelect = document.getElementById("brand-select");
+  const modelSelect = document.getElementById("model-select");
+  const yearSelect = document.getElementById("year-select");
+  const resultBox = document.getElementById("gain-result");
 
-// Champs texte
-const resultTitle = document.getElementById("result-title");
-const resultStock = document.getElementById("result-stock");
-const resultTuned = document.getElementById("result-tuned");
-const resultGain = document.getElementById("result-gain");
-const resultPrice = document.getElementById("result-price");
-
-// --- 1. Remplir la liste des marques ---
-const brands = [...new Set(vehicles.map(v => v.brand))].sort();
-
-brands.forEach(brand => {
-  const option = document.createElement("option");
-  option.value = brand;
-  option.textContent = brand;
-  brandSelect.appendChild(option);
-});
-
-// --- 2. Quand une marque est choisie ---
-brandSelect.addEventListener("change", () => {
-  const brand = brandSelect.value;
-
-  // Reset
-  modelSelect.innerHTML = "";
-  yearSelect.innerHTML = "";
-  resultBox.classList.add("hidden");
-
-  if (!brand) {
-    modelSelect.disabled = true;
-    yearSelect.disabled = true;
+  // Si la section n'est pas sur la page, on arrête
+  if (!brandSelect || !modelSelect || !yearSelect || !resultBox) {
+    console.warn("Section gains non trouvée dans le HTML.");
     return;
   }
 
-  const models = vehicles.filter(v => v.brand === brand);
+  // Champs texte
+  const resultTitle = document.getElementById("result-title");
+  const resultStock = document.getElementById("result-stock");
+  const resultTuned = document.getElementById("result-tuned");
+  const resultGain = document.getElementById("result-gain");
+  const resultPrice = document.getElementById("result-price");
 
-  const defaultModel = document.createElement("option");
-  defaultModel.value = "";
-  defaultModel.textContent = "Sélectionner un modèle";
-  modelSelect.appendChild(defaultModel);
+  // --- 1. Remplir la liste des marques ---
+  const brands = [...new Set(vehicles.map(v => v.brand))].sort();
 
-  models.forEach(v => {
-    const opt = document.createElement("option");
-    opt.value = v.model;
-    opt.textContent = v.model;
-    modelSelect.appendChild(opt);
+  brands.forEach(brand => {
+    const option = document.createElement("option");
+    option.value = brand;
+    option.textContent = brand;
+    brandSelect.appendChild(option);
   });
 
-  modelSelect.disabled = false;
-});
+  // --- 2. Quand une marque est choisie ---
+  brandSelect.addEventListener("change", () => {
+    const brand = brandSelect.value;
 
-// --- 3. Quand un modèle est choisi ---
-modelSelect.addEventListener("change", () => {
-  const model = modelSelect.value;
+    // Reset
+    modelSelect.innerHTML = "";
+    yearSelect.innerHTML = "";
+    resultBox.classList.add("hidden");
 
-  yearSelect.innerHTML = "";
-  resultBox.classList.add("hidden");
+    if (!brand) {
+      modelSelect.disabled = true;
+      yearSelect.disabled = true;
+      return;
+    }
 
-  const vehicle = vehicles.find(v => v.model === model);
-  if (!vehicle) return;
+    const models = vehicles.filter(v => v.brand === brand);
 
-  const defaultYear = document.createElement("option");
-  defaultYear.value = "";
-  defaultYear.textContent = "Sélectionner l'année";
-  yearSelect.appendChild(defaultYear);
+    const defaultModel = document.createElement("option");
+    defaultModel.value = "";
+    defaultModel.textContent = "Sélectionner un modèle";
+    modelSelect.appendChild(defaultModel);
 
-  vehicle.years.forEach(a => {
-    const opt = document.createElement("option");
-    opt.value = a;
-    opt.textContent = a;
-    yearSelect.appendChild(opt);
+    models.forEach(v => {
+      const opt = document.createElement("option");
+      opt.value = v.model;
+      opt.textContent = v.model;
+      modelSelect.appendChild(opt);
+    });
+
+    modelSelect.disabled = false;
   });
 
-  yearSelect.disabled = false;
-});
+  // --- 3. Quand un modèle est choisi ---
+  modelSelect.addEventListener("change", () => {
+    const model = modelSelect.value;
 
-// --- 4. Quand une année est choisie (on affiche les gains) ---
-yearSelect.addEventListener("change", () => {
-  const model = modelSelect.value;
-  const vehicle = vehicles.find(v => v.model === model);
-  if (!vehicle) return;
+    yearSelect.innerHTML = "";
+    resultBox.classList.add("hidden");
 
-  resultTitle.textContent = `${vehicle.brand} – ${vehicle.model} (${yearSelect.value})`;
-  resultStock.textContent = vehicle.stock;
-  resultTuned.textContent = vehicle.tuned;
-  resultGain.textContent = vehicle.gain;
-  resultPrice.textContent = vehicle.price;
+    const vehicle = vehicles.find(v => v.model === model);
+    if (!vehicle) return;
 
-  resultBox.classList.remove("hidden");
+    const defaultYear = document.createElement("option");
+    defaultYear.value = "";
+    defaultYear.textContent = "Sélectionner l'année";
+    yearSelect.appendChild(defaultYear);
+
+    vehicle.years.forEach(a => {
+      const opt = document.createElement("option");
+      opt.value = a;
+      opt.textContent = a;
+      yearSelect.appendChild(opt);
+    });
+
+    yearSelect.disabled = false;
+  });
+
+  // --- 4. Quand une année est choisie (on affiche les gains) ---
+  yearSelect.addEventListener("change", () => {
+    const model = modelSelect.value;
+    const vehicle = vehicles.find(v => v.model === model);
+    if (!vehicle) return;
+
+    resultTitle.textContent = `${vehicle.brand} – ${vehicle.model} (${yearSelect.value})`;
+    resultStock.textContent = vehicle.stock;
+    resultTuned.textContent = vehicle.tuned;
+    resultGain.textContent = vehicle.gain;
+    resultPrice.textContent = vehicle.price;
+
+    resultBox.classList.remove("hidden");
+  });
 });
