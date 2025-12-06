@@ -13,8 +13,54 @@ const vehicles = [
     tuned: "190 ch / 400 Nm",
     gain: "+40 ch / +80 Nm",
     price: "310 €"
-  },
+  }
   {
+  brand: "Volkswagen",
+  model: "Golf 7 1.6 TDI 105",
+  years: ["2013","2014","2015"],
+  stock: "105 ch / 250 Nm",
+  tuned: "135 ch / 300 Nm",
+  gain: "+30 ch / +50 Nm",
+  price: "290 €"
+},
+{
+  brand: "Volkswagen",
+  model: "Golf 7 1.6 TDI 110",
+  years: ["2014","2015","2016","2017"],
+  stock: "110 ch / 250 Nm",
+  tuned: "140 ch / 310 Nm",
+  gain: "+30 ch / +60 Nm",
+  price: "295 €"
+},
+{
+  brand: "Volkswagen",
+  model: "Golf 7 1.6 TDI 115",
+  years: ["2017","2018","2019","2020"],
+  stock: "115 ch / 250 Nm",
+  tuned: "145 ch / 320 Nm",
+  gain: "+30 ch / +70 Nm",
+  price: "300 €"
+},
+{
+  brand: "Volkswagen",
+  model: "Polo 1.6 TDI 90",
+  years: ["2013","2014","2015","2016"],
+  stock: "90 ch / 230 Nm",
+  tuned: "120 ch / 280 Nm",
+  gain: "+30 ch / +50 Nm",
+  price: "280 €"
+},
+{
+  brand: "Volkswagen",
+  model: "Passat 1.6 TDI 120",
+  years: ["2015","2016","2017","2018"],
+  stock: "120 ch / 250 Nm",
+  tuned: "150 ch / 320 Nm",
+  gain: "+30 ch / +70 Nm",
+  price: "310 €"
+},
+
+ {
     brand: "Volkswagen",
     model: "Golf 7 2.0 TDI 184",
     years: ["2013","2014","2015","2016","2017"],
@@ -70,6 +116,35 @@ const vehicles = [
     gain: "+40 ch / +80 Nm",
     price: "345 €"
   },
+    {
+  brand: "Audi",
+  model: "A3 8V 1.6 TDI 105",
+  years: ["2013","2014"],
+  stock: "105 ch / 250 Nm",
+  tuned: "135 ch / 300 Nm",
+  gain: "+30 ch / +50 Nm",
+  price: "300 €"
+},
+    {
+  brand: "Audi",
+  model: "A3 8V 1.6 TDI 110",
+  years: ["2014","2015","2016","2017"],
+  stock: "110 ch / 250 Nm",
+  tuned: "140 ch / 310 Nm",
+  gain: "+30 ch / +60 Nm",
+  price: "310 €"
+},
+{
+  brand: "Audi",
+  model: "A3 8V 1.6 TDI 116",
+  years: ["2017","2018","2019","2020"],
+  stock: "116 ch / 250 Nm",
+  tuned: "145 ch / 320 Nm",
+  gain: "+29 ch / +70 Nm",
+  price: "320 €"
+},
+
+
   {
     brand: "Audi",
     model: "A3 8V 1.6 TDI 110",
