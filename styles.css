@@ -81,7 +81,9 @@ body {
     width: 500px;
     display: block;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 5px;
+    filter: drop-shadow(0 0 18px #39ff14);
+
 }
 @media (max-width: 600px) {
     .logo-img {
