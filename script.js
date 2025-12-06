@@ -227,8 +227,148 @@ const vehicles = [
     price: "340 €"
   },
 
-  // PEUGEOT / CITROËN
+    // PEUGEOT / CITROËN
   {
     brand: "Peugeot",
     model: "308 1.5 BlueHDi 130",
-    years: ["2017","2018",
+    years: ["2017","2018","2019","2020"],
+    stock: "130 ch / 300 Nm",
+    tuned: "160 ch / 360 Nm",
+    gain: "+30 ch / +60 Nm",
+    price: "295 €"
+  },
+  {
+    brand: "Peugeot",
+    model: "308 2.0 BlueHDi 150",
+    years: ["2014","2015","2016","2017"],
+    stock: "150 ch / 370 Nm",
+    tuned: "190 ch / 430 Nm",
+    gain: "+40 ch / +60 Nm",
+    price: "320 €"
+  },
+  {
+    brand: "Peugeot",
+    model: "208 1.2 PureTech 110",
+    years: ["2015","2016","2017","2018"],
+    stock: "110 ch / 205 Nm",
+    tuned: "135 ch / 240 Nm",
+    gain: "+25 ch / +35 Nm",
+    price: "280 €"
+  },
+  {
+    brand: "Peugeot",
+    model: "3008 1.5 BlueHDi 130",
+    years: ["2017","2018","2019","2020"],
+    stock: "130 ch / 300 Nm",
+    tuned: "160 ch / 360 Nm",
+    gain: "+30 ch / +60 Nm",
+    price: "300 €"
+  },
+  {
+    brand: "Citroën",
+    model: "C4 1.2 PureTech 130",
+    years: ["2015","2016","2017","2018"],
+    stock: "130 ch / 230 Nm",
+    tuned: "150 ch / 270 Nm",
+    gain: "+20 ch / +40 Nm",
+    price: "280 €"
+  },
+
+  // RENAULT
+  {
+    brand: "Renault",
+    model: "Mégane 4 1.3 TCe 140",
+    years: ["2018","2019","2020","2021"],
+    stock: "140 ch / 240 Nm",
+    tuned: "170 ch / 300 Nm",
+    gain: "+30 ch / +60 Nm",
+    price: "305 €"
+  },
+  {
+    brand: "Renault",
+    model: "Clio 4 0.9 TCe 90",
+    years: ["2013","2014","2015","2016","2017"],
+    stock: "90 ch / 135 Nm",
+    tuned: "115 ch / 175 Nm",
+    gain: "+25 ch / +40 Nm",
+    price: "260 €"
+  },
+  {
+    brand: "Renault",
+    model: "Clio 5 1.0 TCe 100",
+    years: ["2019","2020","2021"],
+    stock: "100 ch / 160 Nm",
+    tuned: "125 ch / 190 Nm",
+    gain: "+25 ch / +30 Nm",
+    price: "270 €"
+  },
+  {
+    brand: "Renault",
+    model: "Trafic 1.6 dCi 125",
+    years: ["2015","2016","2017","2018"],
+    stock: "125 ch / 320 Nm",
+    tuned: "150 ch / 380 Nm",
+    gain: "+25 ch / +60 Nm",
+    price: "320 €"
+  },
+
+  // FORD
+  {
+    brand: "Ford",
+    model: "Focus 1.5 EcoBoost 150",
+    years: ["2015","2016","2017","2018"],
+    stock: "150 ch / 240 Nm",
+    tuned: "185 ch / 300 Nm",
+    gain: "+35 ch / +60 Nm",
+    price: "320 €"
+  },
+  {
+    brand: "Ford",
+    model: "Focus 1.5 TDCi 120",
+    years: ["2015","2016","2017","2018"],
+    stock: "120 ch / 270 Nm",
+    tuned: "150 ch / 330 Nm",
+    gain: "+30 ch / +60 Nm",
+    price: "300 €"
+  },
+  {
+    brand: "Ford",
+    model: "Fiesta 1.0 EcoBoost 100",
+    years: ["2013","2014","2015","2016","2017"],
+    stock: "100 ch / 170 Nm",
+    tuned: "130 ch / 210 Nm",
+    gain: "+30 ch / +40 Nm",
+    price: "270 €"
+  },
+
+  // HYUNDAI / KIA
+  {
+    brand: "Hyundai",
+    model: "i30 1.4 T-GDI 140",
+    years: ["2017","2018","2019","2020"],
+    stock: "140 ch / 242 Nm",
+    tuned: "170 ch / 300 Nm",
+    gain: "+30 ch / +58 Nm",
+    price: "300 €"
+  },
+  {
+    brand: "Kia",
+    model: "Sportage 1.7 CRDi 115",
+    years: ["2014","2015","2016","2017"],
+    stock: "115 ch / 260 Nm",
+    tuned: "145 ch / 320 Nm",
+    gain: "+30 ch / +60 Nm",
+    price: "300 €"
+  },
+
+  // FIAT / ABARTH
+  {
+    brand: "Abarth",
+    model: "595 1.4T 145",
+    years: ["2012","2013","2014","2015","2016","2017","2018"],
+    stock: "145 ch / 206 Nm",
+    tuned: "170 ch / 260 Nm",
+    gain: "+25 ch / +54 Nm",
+    price: "340 €"
+  }
+];
