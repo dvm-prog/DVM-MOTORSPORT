@@ -7,89 +7,101 @@
   <meta name="description" content="Reprogrammation moteur, optimisation des performances, réglages électroniques et diagnostics avancés.">
   <link rel="stylesheet" href="styles.css">
 </head>
-    
 <body>
   <header class="site-header">
     <div class="container">
-        <img src="logo.png" alt="DVM Motorsport" class="logo-img">
+      <img src="logo.png" alt="DVM Motorsport" class="logo-img">
 
-        <nav class="main-nav">
-            <a href="#accueil">Accueil</a>
-            <a href="#services">Services</a>
-          <section id="gains" class="section">
-  <div class="container">
-    <h2>Gains en puissance par véhicule</h2>
-    <p class="section-note">
-      Choisissez la marque, puis le modèle, puis l'année pour afficher les gains et le tarif.
-    </p>
-
-    <div class="gains-selects">
-      <div class="gains-select">
-        <label for="brand-select">Marque</label>
-        <select id="brand-select">
-          <option value="">Sélectionner une marque</option>
-        </select>
-      </div>
-
-      <div class="gains-select">
-        <label for="model-select">Modèle / moteur</label>
-        <select id="model-select" disabled>
-          <option value="">Choisissez d’abord une marque</option>
-        </select>
-      </div>
-
-      <div class="gains-select">
-        <label for="year-select">Année</label>
-        <select id="year-select" disabled>
-          <option value="">Choisissez d’abord un modèle</option>
-        </select>
-      </div>
+      <nav class="main-nav">
+        <a href="#accueil">Accueil</a>
+        <a href="#services">Services</a>
+        <a href="#gains">Gains</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <div id="gain-result" class="gain-result hidden">
-      <h3 id="result-title"></h3>
-      <p><strong>Origine :</strong> <span id="result-stock"></span></p>
-      <p><strong>Après reprog :</strong> <span id="result-tuned"></span></p>
-      <p><strong>Gain :</strong> <span id="result-gain"></span></p>
-      <p><strong>Tarif indicatif :</strong> <span id="result-price"></span></p>
-      <p class="section-note">
-        Valeurs indicatives, peuvent varier selon l'année, la version, la boîte et l'état du véhicule.
-      </p>
-    </div>
-  </div>
-</section>
-
- <section id="services" class="section">
-        <div class="container">
-            <h2>Nos services</h2>
-            <ul>
-                <li>Reprogrammation Stage 1 / Stage 2</li>
-                <li>Optimisation moteur sur mesure</li>
-                <li>Diagnostic électronique avancé</li>
-                <li>Réglages et interventions sur systèmes moteurs</li>
-            </ul>
-        </div>
+  <main>
+    <section id="accueil" class="hero">
+      <div class="container">
+        <h1>Reprogrammation & optimisation moteur</h1>
+        <p>Performance – Couple – Agrément – Efficacité</p>
+      </div>
     </section>
 
+    <!-- SECTION GAINS -->
+    <section id="gains" class="section">
+      <div class="container">
+        <h2>Gains en puissance par véhicule</h2>
+        <p class="section-note">
+          Choisissez la marque, puis le modèle, puis l'année pour afficher les gains et le tarif.
+        </p>
+
+        <div class="gains-selects">
+          <div class="gains-select">
+            <label for="brand-select">Marque</label>
+            <select id="brand-select">
+              <option value="">Sélectionner une marque</option>
+            </select>
+          </div>
+
+          <div class="gains-select">
+            <label for="model-select">Modèle / moteur</label>
+            <select id="model-select" disabled>
+              <option value="">Choisissez d’abord une marque</option>
+            </select>
+          </div>
+
+          <div class="gains-select">
+            <label for="year-select">Année</label>
+            <select id="year-select" disabled>
+              <option value="">Choisissez d’abord un modèle</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="gain-result" class="gain-result hidden">
+          <h3 id="result-title"></h3>
+          <p><strong>Origine :</strong> <span id="result-stock"></span></p>
+          <p><strong>Après reprog :</strong> <span id="result-tuned"></span></p>
+          <p><strong>Gain :</strong> <span id="result-gain"></span></p>
+          <p><strong>Tarif indicatif :</strong> <span id="result-price"></span></p>
+          <p class="section-note">
+            Valeurs indicatives, peuvent varier selon l'année, la version, la boîte et l'état du véhicule.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION SERVICES -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2>Nos services</h2>
+        <ul>
+          <li>Reprogrammation Stage 1 / Stage 2</li>
+          <li>Optimisation moteur sur mesure</li>
+          <li>Diagnostic électronique avancé</li>
+          <li>Réglages et interventions sur systèmes moteurs</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION CONTACT -->
     <section id="contact" class="section">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>Pour toute demande : <a href="mailto:dvm.motorsport@gmail.com">dvmmotorsport33@gmail.com</a></p>
-        </div>
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Pour toute demande : <a href="mailto:dvmmotorsport33@gmail.com">dvmmotorsport33@gmail.com</a></p>
+      </div>
     </section>
+  </main>
 
-</main>
+  <!-- Boutons contact flottants -->
+  <div class="floating-contact">
+    <a href="tel:0651271939" class="contact-btn call" aria-label="Appeler DVM Motorsport">📞</a>
+    <a href="https://wa.me/33651271939" class="contact-btn wa" aria-label="Contacter sur WhatsApp" target="_blank" rel="noopener">💬</a>
+  </div>
 
-<!-- Boutons contact flottants -->
-<div class="floating-contact">
-
-  <!-- Bouton appel téléphone -->
-  <a href="tel:0651271939" class="contact-btn call" aria-label="Appeler DVM Motorsport">📞</a>
-
-  <!-- Bouton WhatsApp -->
-  <a href="https://wa.me/33651271939" class="contact-btn wa" aria-label="Contacter sur WhatsApp" target="_blank" rel="noopener">💬</a>
-
-</div>
-
+  <!-- Chargement du JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
