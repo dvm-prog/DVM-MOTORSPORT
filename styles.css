@@ -79,3 +79,10 @@ body {
     margin: 0 auto;
     margin-top: 20px;
 }
+@media (max-width: 600px) {
+    .logo-img {
+        width: 80%;
+        max-width: 320px;
+    }
+}
+
