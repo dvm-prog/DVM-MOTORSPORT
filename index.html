@@ -20,116 +20,46 @@
   <div class="container">
     <h2>Gains en puissance par véhicule</h2>
     <p class="section-note">
-      Valeurs indicatives pour les motorisations les plus courantes. Les résultats peuvent varier selon la version exacte et l'état du véhicule.
+      Choisissez la marque, puis le modèle, puis l'année pour afficher les gains et le tarif.
     </p>
 
-    <input
-      type="text"
-      id="search-model"
-      class="gains-search"
-      placeholder="Rechercher une marque ou un modèle (ex : Golf, BMW, 1.5 TSI)…">
+    <div class="gains-selects">
+      <div class="gains-select">
+        <label for="brand-select">Marque</label>
+        <select id="brand-select">
+          <option value="">Sélectionner une marque</option>
+        </select>
+      </div>
 
-    <div class="gains-table-wrapper">
-      <table class="gains-table">
-        <thead>
-          <tr>
-            <th>Marque</th>
-            <th>Modèle / moteur</th>
-            <th>Origine</th>
-            <th>Après reprog</th>
-            <th>Gain</th>
-            <th>Prix</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Volkswagen -->
-          <tr>
-            <td>Volkswagen</td>
-            <td>Golf 7 2.0 TDI 150</td>
-            <td>150 ch / 320 Nm</td>
-            <td>190 ch / 400 Nm</td>
-            <td>+40 ch / +80 Nm</td>
-            <td>390 €</td>
-          </tr>
-          <tr>
-            <td>Volkswagen</td>
-            <td>Golf 7 1.5 TSI 150</td>
-            <td>150 ch / 250 Nm</td>
-            <td>190 ch / 320 Nm</td>
-            <td>+40 ch / +70 Nm</td>
-            <td>420 €</td>
-          </tr>
+      <div class="gains-select">
+        <label for="model-select">Modèle / moteur</label>
+        <select id="model-select" disabled>
+          <option value="">Choisissez d’abord une marque</option>
+        </select>
+      </div>
 
-          <!-- Audi -->
-          <tr>
-            <td>Audi</td>
-            <td>A3 8V 2.0 TDI 150</td>
-            <td>150 ch / 320 Nm</td>
-            <td>190 ch / 400 Nm</td>
-            <td>+40 ch / +80 Nm</td>
-            <td>430 €</td>
-          </tr>
+      <div class="gains-select">
+        <label for="year-select">Année</label>
+        <select id="year-select" disabled>
+          <option value="">Choisissez d’abord un modèle</option>
+        </select>
+      </div>
+    </div>
 
-          <!-- BMW -->
-          <tr>
-            <td>BMW</td>
-            <td>118d 150</td>
-            <td>150 ch / 320 Nm</td>
-            <td>190 ch / 400 Nm</td>
-            <td>+40 ch / +80 Nm</td>
-            <td>450 €</td>
-          </tr>
-
-          <!-- Mercedes -->
-          <tr>
-            <td>Mercedes</td>
-            <td>A180d 1.5</td>
-            <td>109 ch / 260 Nm</td>
-            <td>135 ch / 320 Nm</td>
-            <td>+26 ch / +60 Nm</td>
-            <td>390 €</td>
-          </tr>
-
-          <!-- Peugeot -->
-          <tr>
-            <td>Peugeot</td>
-            <td>308 1.5 BlueHDi 130</td>
-            <td>130 ch / 300 Nm</td>
-            <td>160 ch / 360 Nm</td>
-            <td>+30 ch / +60 Nm</td>
-            <td>370 €</td>
-          </tr>
-
-          <!-- Renault -->
-          <tr>
-            <td>Renault</td>
-            <td>Mégane 4 1.3 TCe 140</td>
-            <td>140 ch / 240 Nm</td>
-            <td>170 ch / 300 Nm</td>
-            <td>+30 ch / +60 Nm</td>
-            <td>380 €</td>
-          </tr>
-
-        </tbody>
-      </table>
+    <div id="gain-result" class="gain-result hidden">
+      <h3 id="result-title"></h3>
+      <p><strong>Origine :</strong> <span id="result-stock"></span></p>
+      <p><strong>Après reprog :</strong> <span id="result-tuned"></span></p>
+      <p><strong>Gain :</strong> <span id="result-gain"></span></p>
+      <p><strong>Tarif indicatif :</strong> <span id="result-price"></span></p>
+      <p class="section-note">
+        Valeurs indicatives, peuvent varier selon l'année, la version, la boîte et l'état du véhicule.
+      </p>
     </div>
   </div>
 </section>
 
-            <a href="#contact">Contact</a>
-        </nav>
-    </div>
-</header>
-
-  <main>
-    <section id="accueil" class="hero">
-        <div class="container">
-            <h1>Reprogrammation & optimisation moteur</h1>
-            <p>Performance – Couple – Agrément – Efficacité</p>
-        </div>
-    </section>
-
-    <section id="services" class="section">
+ <section id="services" class="section">
         <div class="container">
             <h2>Nos services</h2>
             <ul>
