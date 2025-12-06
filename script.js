@@ -13,7 +13,7 @@ const vehicles = [
     tuned: "190 ch / 400 Nm",
     gain: "+40 ch / +80 Nm",
     price: "310 €"
-  }
+  },
   {
   brand: "Volkswagen",
   model: "Golf 7 1.6 TDI 105",
@@ -125,7 +125,7 @@ const vehicles = [
   gain: "+30 ch / +50 Nm",
   price: "300 €"
 },
-    {
+  {
   brand: "Audi",
   model: "A3 8V 1.6 TDI 110",
   years: ["2014","2015","2016","2017"],
@@ -134,7 +134,7 @@ const vehicles = [
   gain: "+30 ch / +60 Nm",
   price: "310 €"
 },
-{
+ {
   brand: "Audi",
   model: "A3 8V 1.6 TDI 116",
   years: ["2017","2018","2019","2020"],
@@ -143,9 +143,7 @@ const vehicles = [
   gain: "+29 ch / +70 Nm",
   price: "320 €"
 },
-
-
-  {
+   {
     brand: "Audi",
     model: "A3 8V 1.6 TDI 110",
     years: ["2013","2014","2015","2016","2017"],
@@ -154,7 +152,7 @@ const vehicles = [
     gain: "+30 ch / +60 Nm",
     price: "320 €"
   },
-  {
+   {
     brand: "Audi",
     model: "A4 B9 2.0 TDI 190",
     years: ["2016","2017","2018","2019"],
@@ -163,7 +161,7 @@ const vehicles = [
     gain: "+30 ch / +60 Nm",
     price: "360 €"
   },
-  {
+   {
     brand: "Audi",
     model: "A1 1.4 TFSI 125",
     years: ["2012","2013","2014","2015","2016"],
