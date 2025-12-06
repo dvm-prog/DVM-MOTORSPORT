@@ -15,9 +15,13 @@ body {
 
 /* En-tête */
 .site-header {
-    background: #000;
-    padding: 15px 0;
+    background: radial-gradient(circle at top, #111 0%, #000 55%, #000 100%);
+    padding: 25px 0 20px 0;
     text-align: center;
+    border-bottom: 1px solid #222;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
 }
 
 .logo {
