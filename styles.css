@@ -363,5 +363,39 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 0 18px rgba(255, 200, 0, 1);
 }
+/* ----- ZONE D’INTERVENTION (3 colonnes) ----- */
+
+.zone-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+  text-align: left;
+}
+
+.zone-col h3 {
+  color: #e30613;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.zone-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.zone-col li {
+  margin: 6px 0;
+  font-size: 15px;
+  color: #ddd;
+}
+
+/* Version mobile */
+@media (max-width: 800px) {
+  .zone-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 
