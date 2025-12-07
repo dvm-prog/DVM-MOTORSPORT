@@ -303,3 +303,41 @@ body {
 .gains-table tr:hover {
   background: #262626;
 }
+/* ---------- AVIS & CONFIANCE ---------- */
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.trust-item {
+  background: #181818;
+  border-radius: 8px;
+  padding: 16px 18px;
+  text-align: left;
+  border: 1px solid #262626;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.6);
+}
+
+.trust-item h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: #ff4d00;
+}
+
+.trust-item p {
+  margin: 0;
+  font-size: 14px;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
