@@ -43,13 +43,21 @@ body {
   width: auto;
 }
 
-/* Logo de la page d'accueil (grand) */
+/* Logo de la section ACCUEIL (grand logo) */
 .home-logo {
   display: block;
   margin: 0 auto 20px;
-  max-width: 260px;
   width: 100%;
+  max-width: 420px;   /* taille idéale */
   height: auto;
+  filter: drop-shadow(0 0 12px #39ff14);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .home-logo {
+    max-width: 300px;
+  }
 }
 
 .header-title {
