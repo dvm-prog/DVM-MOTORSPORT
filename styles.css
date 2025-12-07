@@ -12,25 +12,108 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+/* ---- ENTÊTE MODERNE ---- */
 
-
-/* En-tête */
 .site-header {
-    background: radial-gradient(circle at top, #111 0%, #000 55%, #000 100%);
-    padding: 25px 0 20px 0;
-    text-align: center;
-    border-bottom: 1px solid #222;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: radial-gradient(circle at top, #111 0%, #000 55%, #000 100%);
+  border-bottom: 1px solid #222;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
 }
 
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  gap: 1.5rem;
 }
 
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: #e30613;
-    text-decoration: none;
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
+
+/* Logo dans le header */
+.logo-img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-name {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.brand-tagline {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+/* Navigation */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.main-nav a {
+  color: #ccc;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  opacity: 0.8;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.main-nav a:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
+  }
+
+  .main-nav {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+  }
+
+  .logo-img {
+    height: 48px;
+  }
+
+  .brand-name {
+    font-size: 0.8rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.7rem;
+  }
+}
+
+
 
 /* Section Héros */
 .hero {
@@ -155,30 +238,7 @@ img {
   max-width: 250px;
   height: auto;
 }
-/* Logo DVM */
-.logo-img {
-  display: block;
-  margin: 0 auto 10px;  /* centre le logo */
-  max-width: 260px;     /* taille max du logo */
-  height: auto;
-}
-.main-nav {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
 
-.main-nav a {
-  color: #ccc;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.main-nav a:hover {
-  color: #ffffff;
-  text-decoration: underline;
-}
 /* Section Gains */
 /* Texte sous le titre */
 .section-note {
