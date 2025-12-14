@@ -454,5 +454,9 @@ body {
   transform: scale(1.04);
   box-shadow: 0 12px 35px rgba(0, 255, 0, 0.4);
 }
+.galerie-item img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
 
 
