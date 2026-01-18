@@ -532,8 +532,8 @@ body {
 }
 /* Agrandir les boutons flottants contact */
 .floating-buttons a img {
-  width: 65px;   /* taille actuelle → augmente si besoin */
-  height: 65px;
+  width: 85px;   /* taille actuelle → augmente si besoin */
+  height: 85px;
 }
 
 /* Option : un léger zoom au survol */
