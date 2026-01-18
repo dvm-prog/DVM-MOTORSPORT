@@ -532,6 +532,21 @@ body {
 @media (min-width: 900px) {
   .review-card { padding: 22px; }
 }
+/* FORCE la taille des 2 boutons flottants (si pas de class contact-btn) */
+.floating-contact a{
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;      /* taille de l’icône */
+}
+
+/* Option : un peu plus d’espace */
+.floating-contact{
+  gap: 14px;
+}
 
 
 
