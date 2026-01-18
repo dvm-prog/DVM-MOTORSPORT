@@ -473,3 +473,71 @@ window.addEventListener("DOMContentLoaded", () => {
     resultBox.classList.remove("hidden");
   });
 });
+// ===== Avis (à remplir avec tes vrais avis) =====
+const DVM_REVIEWS = [
+  {
+    name: "Client vérifié",
+    stars: 5,
+    text: "Travail sérieux, explications claires et résultat au top. Je recommande.",
+    meta: "Stage 1 — Gironde"
+  },
+  {
+    name: "Client vérifié",
+    stars: 5,
+    text: "Très bon accueil, véhicule transformé en restant propre et fiable. Merci !",
+    meta: "Optimisation — 33540"
+  },
+  {
+    name: "Client vérifié",
+    stars: 5,
+    text: "Intervention rapide, conseils pro, suivi après la prestation. Nickel.",
+    meta: "Diag / réglage — 33 / 47 / 24"
+  }
+];
+
+(function initReviewsSlider() {
+  const track = document.getElementById("reviews-track");
+  const dots = document.getElementById("reviews-dots");
+  if (!track || !dots) return;
+
+  let index = 0;
+
+  const starStr = (n) => "★★★★★".slice(0, n) + "☆☆☆☆☆".slice(0, 5 - n);
+
+  function render() {
+    track.innerHTML = `
+      <div class="review-card">
+        <div class="review-head">
+          <div class="review-name">${DVM_REVIEWS[index].name}</div>
+          <div class="review-stars" aria-label="${DVM_REVIEWS[index].stars} sur 5">
+            ${starStr(DVM_REVIEWS[index].stars)}
+          </div>
+        </div>
+        <div class="review-text">“${DVM_REVIEWS[index].text}”</div>
+        <div class="review-meta">${DVM_REVIEWS[index].meta || ""}</div>
+      </div>
+    `;
+
+    // dots
+    dots.innerHTML = "";
+    DVM_REVIEWS.forEach((_, i) => {
+      const b = document.createElement("div");
+      b.className = "reviews-dot" + (i === index ? " active" : "");
+      b.addEventListener("click", () => { index = i; render(); });
+      dots.appendChild(b);
+    });
+  }
+
+  function next() { index = (index + 1) % DVM_REVIEWS.length; render(); }
+  function prev() { index = (index - 1 + DVM_REVIEWS.length) % DVM_REVIEWS.length; render(); }
+
+  const prevBtn = document.querySelector(".reviews-btn.prev");
+  const nextBtn = document.querySelector(".reviews-btn.next");
+  if (prevBtn) prevBtn.addEventListener("click", prev);
+  if (nextBtn) nextBtn.addEventListener("click", next);
+
+  render();
+
+  // Auto défilement (optionnel)
+  setInterval(next, 8000);
+})();
