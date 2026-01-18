@@ -460,5 +460,89 @@ body {
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+/* ===== Avis slider ===== */
+.reviews-slider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.reviews-track {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.review-card {
+  min-width: 100%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.review-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.review-name {
+  font-weight: 700;
+}
+
+.review-stars {
+  letter-spacing: 1px;
+  opacity: 0.95;
+}
+
+.review-text {
+  opacity: 0.95;
+  line-height: 1.5;
+}
+
+.review-meta {
+  margin-top: 10px;
+  font-size: 0.95em;
+  opacity: 0.75;
+}
+
+.reviews-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.reviews-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.reviews-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.25);
+  cursor: pointer;
+}
+.reviews-dot.active {
+  background: rgba(255,255,255,0.9);
+}
+
+/* Desktop: cartes plus larges */
+@media (min-width: 900px) {
+  .review-card { padding: 22px; }
+}
 
 
