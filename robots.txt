@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dvm-prog.github.io/DVM-MOTORSPORT/sitemap.xml
+Sitemap: https://dvm-motorsport.fr/sitemap.xml
