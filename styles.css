@@ -530,5 +530,16 @@ body {
 @media (min-width: 900px) {
   .review-card { padding: 22px; }
 }
+/* Agrandir les boutons flottants contact */
+.floating-buttons a img {
+  width: 55px;   /* taille actuelle → augmente si besoin */
+  height: 55px;
+}
+
+/* Option : un léger zoom au survol */
+.floating-buttons a:hover img {
+  transform: scale(1.15);
+  transition: 0.2s ease;
+}
 
 
